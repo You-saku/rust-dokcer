@@ -30,8 +30,9 @@ docker-compose exec rust sh
 でコンテナに入ってからやると良いです
 
 ## お役立ち情報
+* Makefileがあるよ(あんまり使えない)
 * cargo new {プロジェクト名} をしたらプロジェクトのルートに```.gitignore```を作って```/target```を書いておくと良い
-* ```.gitignore```に書いておくとよいファイル名がまだわからない
+* ```.gitignore```に書いておくとよいファイル,ディレクトリの一覧がまだわからない
 
 ## rustのドキュメント
 https://doc.rust-jp.rs/book-ja/title-page.html
