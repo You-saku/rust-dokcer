@@ -5,6 +5,8 @@ services:
       context: . # Dockerfileで親ディレクトリを参照するときに使うらしいぞ
       dockerfile: ./docker/rust/Dockerfile
     tty: true
+    ports:
+      - "7878:7878" # webポート開けたい
     container_name: rust
     volumes:
       - .:/usr/src/rust
