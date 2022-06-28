@@ -36,3 +36,6 @@ docker-compose exec rust sh
 
 ## rustのドキュメント
 https://doc.rust-jp.rs/book-ja/title-page.html
+
+## actixのドキュメント
+https://actix.rs/docs
