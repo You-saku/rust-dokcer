@@ -1,7 +1,7 @@
 use std::io::prelude::*;
 use std::net::TcpStream;
 use std::net::TcpListener;
-use std::fs::File;
+//use std::fs::File;
 
 fn main() {
     let listener = TcpListener::bind("0.0.0.0:7878").unwrap();
@@ -15,16 +15,30 @@ fn main() {
 }
 
 fn handle_connection(mut stream: TcpStream) {
-    let mut buffer = [0; 1024];
-    stream.read(&mut buffer).unwrap();
+    // html表示
+    // let mut buffer = [0; 1024];
+    // stream.read(&mut buffer).unwrap();
 
-    let mut file = File::open("hello.html").unwrap();
+    // let mut file = File::open("hello.html").unwrap();
 
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).unwrap();
+    // let mut contents = String::new();
+    // file.read_to_string(&mut contents).unwrap();
 
-    let response = format!("HTTP/1.1 200 OK\r\n\r\n{}", contents);
+    // let response = format!("HTTP/1.1 200 OK\r\n\r\n{}", contents);
+
+    // stream.write(response.as_bytes()).unwrap();
+    // stream.flush().unwrap();
+
+    // リクエスト取得
+    // let mut buffer = [0; 1024];
+
+    // stream.read(&mut buffer).unwrap();
+
+    // println!("Request: {}", String::from_utf8_lossy(&buffer[..]));
+
+    // レスポンス返す
+    let response = "HTTP/1.1 200 OK\r\n\r\n";
 
     stream.write(response.as_bytes()).unwrap();
-    stream.flush().unwrap();
+    stream.flush().unwrap(); //  バイトが全て接続に書き込まれるまでプログラムが継続するのを防ぎます;
 }
